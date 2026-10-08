@@ -1,0 +1,381 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 30px;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #e8f1ff, #f8fbff);
+    min-height: 100vh;
+}
+
+.container {
+    width: 500px;
+    max-width: 100%;
+    margin: auto;
+}
+
+h1 {
+    text-align: center;
+    color: #2c5aa0;
+    margin-bottom: 5px;
+}
+
+.subtitle {
+    text-align: center;
+    color: #666;
+    margin-bottom: 25px;
+}
+
+
+/* =========================
+   APPOINTMENT FORM
+========================= */
+
+form {
+    background: white;
+    padding: 25px;
+    border-radius: 15px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.10);
+}
+
+label {
+    display: block;
+    margin-top: 15px;
+    margin-bottom: 6px;
+    font-weight: bold;
+    color: #333;
+}
+
+input,
+select {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 7px;
+    font-size: 15px;
+}
+
+input:focus,
+select:focus {
+    outline: none;
+    border-color: #2c5aa0;
+    box-shadow: 0 0 5px rgba(44, 90, 160, 0.2);
+}
+
+
+/* =========================
+   BOOK BUTTON
+========================= */
+
+form button {
+    width: 100%;
+    margin-top: 25px;
+    padding: 14px;
+    background: #2c5aa0;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+form button:hover {
+    background: #1f447d;
+    transform: translateY(-2px);
+}
+
+
+/* =========================
+   SUCCESS MESSAGE
+========================= */
+
+#successMessage {
+    margin-top: 15px;
+    text-align: center;
+    color: #159447;
+    font-weight: bold;
+}
+
+
+/* =========================
+   APPOINTMENT RECEIPT
+========================= */
+
+.appointment-box {
+    display: none;
+
+    margin-top: 30px;
+    background: white;
+    padding: 25px;
+
+    border-radius: 18px;
+
+    box-shadow:
+        0 10px 30px rgba(0, 0, 0, 0.12);
+
+    position: relative;
+    overflow: hidden;
+}
+
+
+/* Receipt animation */
+
+.appointment-box.show {
+    display: block;
+    animation: receiptAppear 0.8s ease forwards;
+}
+
+@keyframes receiptAppear {
+
+    0% {
+        opacity: 0;
+        transform: translateY(50px) scale(0.9);
+    }
+
+    60% {
+        transform: translateY(-8px) scale(1.02);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+
+/* =========================
+   RECEIPT HEADER
+========================= */
+
+.receipt-header {
+    text-align: center;
+}
+
+.receipt-header h2 {
+    color: #2c5aa0;
+    margin: 10px 0 5px;
+}
+
+.receipt-header p {
+    color: #777;
+    font-size: 14px;
+}
+
+
+/* Green check animation */
+
+.check-icon {
+    width: 65px;
+    height: 65px;
+
+    margin: auto;
+
+    border-radius: 50%;
+
+    background: #21a65a;
+    color: white;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 35px;
+    font-weight: bold;
+
+    animation: checkAnimation 0.7s ease;
+}
+
+@keyframes checkAnimation {
+
+    0% {
+        transform: scale(0);
+    }
+
+    60% {
+        transform: scale(1.2);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+
+/* =========================
+   RECEIPT LINE
+========================= */
+
+.receipt-line {
+    border-top: 2px dashed #ddd;
+    margin: 20px 0;
+}
+
+
+/* =========================
+   DETAILS
+========================= */
+
+.appointment-details {
+    background: #f7faff;
+    border-radius: 10px;
+    padding: 15px;
+}
+
+.detail-row {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+
+    padding: 11px 0;
+
+    border-bottom: 1px solid #e5e5e5;
+}
+
+.detail-row:last-child {
+    border-bottom: none;
+}
+
+.detail-row span {
+    color: #777;
+}
+
+.detail-row strong {
+    color: #222;
+    text-align: right;
+}
+
+
+/* =========================
+   STATUS
+========================= */
+
+.receipt-status {
+    margin-top: 18px;
+
+    text-align: center;
+
+    background: #e8f8ee;
+    color: #159447;
+
+    padding: 10px;
+
+    border-radius: 8px;
+
+    font-weight: bold;
+}
+
+.receipt-status span {
+    animation: blink 1s infinite;
+}
+
+@keyframes blink {
+
+    0%, 100% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0.3;
+    }
+}
+
+
+/* =========================
+   PRINT BUTTON
+========================= */
+
+.print-btn {
+    width: 100%;
+
+    margin-top: 20px;
+
+    padding: 13px;
+
+    background: #222;
+    color: white;
+
+    border: none;
+    border-radius: 8px;
+
+    font-size: 15px;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+.print-btn:hover {
+    background: #000;
+    transform: translateY(-2px);
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 600px) {
+
+    body {
+        padding: 15px;
+    }
+
+    .container {
+        width: 100%;
+    }
+
+    .detail-row {
+        flex-direction: column;
+        gap: 4px;
+    }
+
+    .detail-row strong {
+        text-align: left;
+    }
+}
+
+
+/* =========================
+   PRINT PAGE
+========================= */
+
+@media print {
+
+    body {
+        background: white;
+        padding: 0;
+    }
+
+    body * {
+        visibility: hidden;
+    }
+
+    .appointment-box,
+    .appointment-box * {
+        visibility: visible;
+    }
+
+    .appointment-box {
+        display: block !important;
+
+        position: absolute;
+
+        left: 50%;
+        top: 30px;
+
+        transform: translateX(-50%);
+
+        width: 500px;
+
+        box-shadow: none;
+
+        border: 1px solid #ddd;
+    }
+
+    .print-btn {
+        display: none;
+    }
+}

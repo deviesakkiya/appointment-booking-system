@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Appointment Booking System</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h1>Appointment Booking System</h1>
+        <p class="subtitle">Book your doctor appointment easily</p>
+
+        <!-- Appointment Form -->
+        <form id="appointmentForm">
+
+            <label for="name">Patient Name</label>
+            <input type="text"
+                   id="name"
+                   placeholder="Enter patient name"
+                   required>
+
+            <label for="phone">Phone Number</label>
+            <input type="tel"
+                   id="phone"
+                   placeholder="Enter phone number"
+                   required>
+
+            <label for="doctor">Select Doctor</label>
+
+            <select id="doctor" required>
+                <option value="">-- Select Doctor --</option>
+                <option value="Dr. Akal">Dr. Akal</option>
+                <option value="Dr. Nithya">Dr. Nithya</option>
+                <option value="Dr. Thara">Dr. Thara</option>
+            </select>
+
+            <label for="date">Appointment Date</label>
+            <input type="date" id="date" required>
+
+            <label for="time">Appointment Time</label>
+            <input type="time" id="time" required>
+
+            <button type="submit">
+                Book Appointment
+            </button>
+
+        </form>
+
+        <!-- Success Message -->
+        <div id="successMessage"></div>
+
+        <!-- Appointment Receipt -->
+        <div class="appointment-box" id="receipt">
+
+            <div class="receipt-header">
+                <div class="check-icon">✓</div>
+
+                <h2>Appointment Confirmed</h2>
+
+                <p>Your appointment has been booked successfully!</p>
+            </div>
+
+            <div class="receipt-line"></div>
+
+            <div class="appointment-details">
+
+                <div class="detail-row">
+                    <span>Patient Name</span>
+                    <strong id="receiptName">-</strong>
+                </div>
+
+                <div class="detail-row">
+                    <span>Phone Number</span>
+                    <strong id="receiptPhone">-</strong>
+                </div>
+
+                <div class="detail-row">
+                    <span>Doctor</span>
+                    <strong id="receiptDoctor">-</strong>
+                </div>
+
+                <div class="detail-row">
+                    <span>Appointment Date</span>
+                    <strong id="receiptDate">-</strong>
+                </div>
+
+                <div class="detail-row">
+                    <span>Appointment Time</span>
+                    <strong id="receiptTime">-</strong>
+                </div>
+
+                <div class="detail-row">
+                    <span>Appointment ID</span>
+                    <strong id="appointmentId">-</strong>
+                </div>
+
+            </div>
+
+            <div class="receipt-status">
+                <span>●</span> Confirmed
+            </div>
+
+            <!-- Print Button -->
+            <button class="print-btn" onclick="printReceipt()">
+                🖨 Print Appointment Receipt
+            </button>
+
+        </div>
+
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
